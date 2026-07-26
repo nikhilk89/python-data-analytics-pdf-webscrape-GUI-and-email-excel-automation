@@ -1,7 +1,7 @@
 # python-data-analytics-pdf-webscrape-GUI-and-email-excel-automation
 Data Analytics | Streamlit Dashboards | PDF Report Generators &amp; Editors | Web Scraping Pipelines | Excel, Email &amp; File Automation
 
-A collection of Data analysis tools wiht interactive Streamlit Dashboard, Web scrapers, PDF extraction and loader, Tkinter based GUI app with form fill, search using sqlite3, Email-Excel-File & Folder Automation scripts built using Python, Streamlit, Pandas, BeautifulSoup, and ReportLab
+A collection of Data analysis tools with interactive Streamlit Dashboard, Web scrapers, PDF extraction and loader, Tkinter based GUI app with form fill, search using sqlite3, Email-Excel-File & Folder Automation scripts built using Python, Streamlit, Pandas and BeautifulSoup, 
 
 --------------
 
@@ -46,9 +46,9 @@ A collection of Data analysis tools wiht interactive Streamlit Dashboard, Web sc
   * **HTML Parsing:** Crawls `books.toscrape.com` to extract titles, stock status, and prices.
   * **Structured Data Export:** Cleans text markup and saves normalized outputs directly into an Excel-ready `books.csv` file.
 
-#### 3.2 Financial Historical Stock Scraper (Dynamic JS Rendering)
+#### 3.2 Financial Historical Stock Scraper (Dynamic JS Rendering) - Yahoo Finance
 * **Tech Stack:** `Selenium`, `Pandas`, `OpenPyXL`
-* **Overview:** Headless web scraping pipeline for dynamic financial data tables (e.g., NVIDIA / Yahoo Finance).
+* **Overview:** Headless web scraping pipeline for dynamic financial data tables (e.g., NVIDIA).
 * **Key Features:**
   * **Automated URL Parameters:** Programmatically calculates and converts calendar dates (`YYYY-MM-DD`) into Unix timestamps required by Yahoo Finance.
   * **Anti-Scraping Bypass:** Runs Selenium in headless mode with custom User-Agent headers to handle dynamic JavaScript loading.
