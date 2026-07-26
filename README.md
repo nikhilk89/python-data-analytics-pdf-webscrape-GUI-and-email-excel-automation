@@ -7,60 +7,78 @@ A collection of Data analysis tools wiht interactive Streamlit Dashboard, Web sc
 
 ## 🛠️ Included Modules
 
-### 1. Data Analytics - Risk Profile Analytics (Interactive Streamlit Data Dashboard)
-* reads and cleans raw client and portfolio data
-* Categorise risk profiles, Risk diversifications
-* pivot tables
-* Report Generation - Advisor level-Client Risk profile Summary .CSV and .PNG (pie charts) files
-* Streamlit Web Interactive Dashboard - where users can filter metrics, analyze trends, and export summary views
+### 1. 📊 Risk Profile Analytics (Interactive Streamlit Dashboard)
+* **Tech Stack:** `Streamlit`, `Pandas`, `Matplotlib`
+* **Overview:** An end-to-end analytics dashboard for wealth management, risk profiling, and client portfolio diversification.
+* **Key Features:**
+  * **Data Pipeline:** Ingests and cleans raw client portfolio datasets, categorizing risk profiles and evaluating diversification metrics.
+  * **Automated Reporting:** Programmatically generates advisor-level client summary reports in `.csv` and exports visualization charts as `.png`.
+  * **Interactive UI:** Provides a web dashboard for dynamic metric filtering, trend analysis, and custom data exports.
 
+---
 
-### 2. PDF Extractor & Generator 
-#### 2.1 PDF Extractor- 
-This is a PDF Invoice Data Extraction & Parsing Pipeline: 
-* Vendor Router: Opens PDF invoices using pdfplumber, scans the raw text, and routes the document to a specific parser based on keywords (bioplex, zencorporations, or conincorporated).
-* Extracts invoice metadata (Invoice #, Date, Total Amount) and table line items (Quantity, Description, Unit Price, Total) using custom Regular Expressions tuned to each vendor's layout.
-* Compiles all processed summaries into an "Invoice Summaries" tab and all extracted item rows into a "Line Items" tab inside a single Excel workbook
+### 2. 📄 PDF Processing Suite (Extraction & Fillable Generators)
 
+#### 2.1 Multi-Vendor Invoice Data Extraction Pipeline
+* **Tech Stack:** `pdfplumber`, `re` (Regex), `Pandas`, `OpenPyXL`
+* **Overview:** Automated document routing and text extraction pipeline designed to parse multi-layout PDF invoices.
+* **Key Features:**
+  * **Vendor Router Engine:** Scans raw text using `pdfplumber` and conditionally routes documents to specific parsing logic based on vendor keyword signatures.
+  * **Regex Line-Item Parsing:** Extracts invoice metadata (Invoice #, Date, Total) alongside detailed item tables using custom Regular Expressions tuned to vendor layouts.
+  * **Dual-Tab Excel Output:** Exports invoice header summaries into an `"Invoice Summaries"` tab and detailed line items into a `"Line Items"` tab in a consolidated Excel workbook.
 
-#### 2.2 PDF Generator/Filler-
-* Uses FillPDF to extract PDF fields and creates excel
-* Takes raw customer records from Excel data and automatically generates filled-out Direct Deposit PDF form
-* Reads customer records (ddfields.xlsx) via Pandas, formatting dates (MM/DD/YYYY) and handling missing data cleanly
-* Programmatically opens fillable PDF templates (chase-dd.pdf), maps data frames to fillable form fields, and toggles dynamic radio buttons (e.g., Checking vs. Savings)
-* outputs individual PDFs into a designated output directory
+#### 2.2 PDF Mail-Merge & Direct Deposit Form Generator
+* **Tech Stack:** `FillPDF` / `pypdf`, `Pandas`
+* **Overview:** Takes client banking records from Excel and automatically populates official fillable PDF forms.
+* **Key Features:**
+  * **Data Normalization:** Ingests client records (`ddfields.xlsx`) via Pandas, formats dates (`MM/DD/YYYY`), and handles missing fields cleanly.
+  * **Interactive Form-Filling:** Maps Excel columns directly to PDF form fields (`chase-dd.pdf`) and toggles dynamic radio buttons (e.g., *Checking* vs. *Savings*).
+  * **Batch Generation:** Programmatically outputs individual, client-named PDFs into a designated output directory.
 
+---
 
-### 3. WebScraper 
-#### 3.1 E-Commerce Catalog Scrape (Static)-
-* crawls book catalog pages to extract structured product data into an Excel-ready CSV format
-* HTML Parsing: Navigates books.toscrape.com using Requests & BeautifulSoup to extract book titles, stock availability, and prices
-* Saves normalized output directly into books.csv for seamless spreadsheet processing
+### 3. 🌐 Web Extraction Pipelines (Static & Dynamic)
 
-#### 3.2 Yahoo Finance Historical Stock Scraper(Dynamic) | Selenium-
-* A headless web extraction pipeline that automates retrieving and exporting financial stock tables (eg- NVIDIA)
-* Automatically converts standard human dates (YYYY-MM-DD) into Unix timestamps for Yahoo Finance URL parameters
-* Use Selenium with custom User-Agent headers to handle dynamic JavaScript rendering and bypass basic anti-scraping blocks
-* Uses Pandas to process daily stock rows and dynamic column-width auto-fitting in NVDA_history.xlsx so no values are truncated
+#### 3.1 E-Commerce Catalog Scraper (Static Parsing)
+* **Tech Stack:** `Requests`, `BeautifulSoup4`, `CSV`
+* **Overview:** A web crawling tool for extracting structured product listings from static e-commerce catalogs.
+* **Key Features:**
+  * **HTML Parsing:** Crawls `books.toscrape.com` to extract titles, stock status, and prices.
+  * **Structured Data Export:** Cleans text markup and saves normalized outputs directly into an Excel-ready `books.csv` file.
 
+#### 3.2 Financial Historical Stock Scraper (Dynamic JS Rendering)
+* **Tech Stack:** `Selenium`, `Pandas`, `OpenPyXL`
+* **Overview:** Headless web scraping pipeline for dynamic financial data tables (e.g., NVIDIA / Yahoo Finance).
+* **Key Features:**
+  * **Automated URL Parameters:** Programmatically calculates and converts calendar dates (`YYYY-MM-DD`) into Unix timestamps required by Yahoo Finance.
+  * **Anti-Scraping Bypass:** Runs Selenium in headless mode with custom User-Agent headers to handle dynamic JavaScript loading.
+  * **Formatted Excel Export:** Loads price histories into Pandas and auto-adjusts column widths in `NVDA_history.xlsx` to prevent text truncation.
 
-### 4. Email, Excel, file and folder Automation-
-* Automation to search email with subject, sender and download excel attachments with incremental names
-* Combine all the excel attachments into 1 excel file and save into another folder with date time filename format
-* create pivot and charts in excel 
-* draft and send the master file on email to recipients wit message
+---
 
+### 4. 📧 Email, Excel & File System Workflow Automation
+* **Tech Stack:** `imaplib` / `smtplib`, `Pandas`, `OpenPyXL`
+* **Overview:** An end-to-end automation pipeline that ingests incoming email attachments, merges datasets, constructs pivot reports, and dispatches master summary emails.
+* **Key Features:**
+  * **Attachment Harvester:** Searches inbox messages by subject/sender and downloads Excel attachments using incremental naming rules.
+  * **Data Consolidation:** Stacks raw workbook sheets into a single master dataset saved with timestamped filenames (`Consolidated_Report_YYYYMMDD_HHMM.xlsx`).
+  * **Automated Pivot Reports & Dispatch:** Programmatically builds native Excel Pivot Tables and embedded charts, drafting and emailing the finalized report to stakeholders automatically.
 
-### 5. GUI - form filling and search (using TKinter, SQLite3,Excel)- 
-* GUI desktop app that lets users fill form, -name, age, courses, agree to rules and submit
-* save the form data into excel and SQLite3 database
-* another tab in the GUI - lets reviewer see the entries of users (from sqlite db)
+---
 
+### 5. 🖥️ Desktop Data Entry & Reviewer Portal (GUI Application)
+* **Tech Stack:** `Tkinter`, `SQLite3`, `Pandas`, `OpenPyXL`
+* **Overview:** A desktop graphical interface built for structured data intake, dual persistence, and reviewer administration.
+* **Key Features:**
+  * **Form Intake:** User-friendly interface capturing user details (Name, Age, Course Selection, Rule Agreement) with input validation.
+  * **Dual Persistence:** Automatically writes submitted data simultaneously to an Excel workbook and a local `SQLite3` database.
+  * **Reviewer Dashboard:** Features a dedicated secondary tab allowing administrators to query, view, and audit entries directly from the database.
 
-### 6. Weather App (using requests)
-* A lightweight CLI utility that interacts with the OpenWeatherMap REST API to retrieve and display real-time weather conditions and temperatures for any user-selected city
-* Uses the requests library to construct dynamic HTTP GET requests targeting the OpenWeatherMap API endpoints
-* Validates response payloads against API error codes (e.g., catching 404 errors for invalid or misspelled city inputs gracefully)
+---
 
-
-
+### 6. 🌤️ Weather Forecast CLI Utility
+* **Tech Stack:** `Requests`, `JSON`
+* **Overview:** A lightweight command-line tool connecting to external weather APIs for instant location forecasts.
+* **Key Features:**
+  * **REST API Querying:** Interacts with the OpenWeatherMap REST API via dynamic HTTP GET requests.
+  * **Response Validation:** Handles API status payloads gracefully, returning clear user feedback for invalid city inputs or `404` errors.
