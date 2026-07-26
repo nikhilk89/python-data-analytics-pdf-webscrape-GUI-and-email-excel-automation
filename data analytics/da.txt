@@ -1,0 +1,25 @@
+This capstone project - Client Risk Assessment Tool - data manipulation, visualization, and automation to -import and clean client data from Excel files
+-Client and Portfolio data cleaning- Read n clean in Client_Data and Portfolio_Data using pandas
+-Categorizing risk profiles-categorize
+-Analyze diversification- pivot
+-Generating visuals for each client's diversification
+-Automating PDF reports per advisor containing the correct client information- Generate risk assessment reports report for each advisor, RP summary and diversification chart
+
+Additional-
+•	Interactive Streamlit dashboard 
+•	Better visualizations 
+•	Send report in weekly basis
+•	Date filters 
+•	Download reports 
+
+Risk Analytics
+•	Conservative / Balanced / Aggressive distribution 
+•	High-risk clients needing review 
+Portfolio Analytics
+•	Asset allocation 
+•	Diversification score 
+•	Top-performing asset class 
+Advisor Analytics
+•	Clients per advisor 
+•	AUM per advisor 
+•	Average client risk 
