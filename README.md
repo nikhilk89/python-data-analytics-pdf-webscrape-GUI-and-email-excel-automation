@@ -37,7 +37,7 @@ A collection of Data analysis tools with interactive Streamlit Dashboard, Web sc
 
 ---
 
-### 3. 🌐 Web Extraction Pipelines (Static & Dynamic)
+### 3. 🌐 Web Scraping & Extraction Pipelines (Static & Dynamic)
 
 #### 3.1 E-Commerce Catalog Scraper (Static Parsing)
 * **Tech Stack:** `Requests`, `BeautifulSoup4`, `CSV`
@@ -66,7 +66,7 @@ A collection of Data analysis tools with interactive Streamlit Dashboard, Web sc
 
 ---
 
-### 5. 🖥️ Desktop Data Entry & Reviewer Portal (GUI Application)
+### 5. 🖥️  GUI Application - Desktop Data Entry & Reviewer Portal
 * **Tech Stack:** `Tkinter`, `SQLite3`, `Pandas`, `OpenPyXL`
 * **Overview:** A desktop graphical interface built for structured data intake, dual persistence, and reviewer administration.
 * **Key Features:**
