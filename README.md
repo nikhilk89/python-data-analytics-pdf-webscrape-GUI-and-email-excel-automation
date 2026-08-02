@@ -35,6 +35,16 @@ A collection of Data analysis tools with interactive Streamlit Dashboard, Web sc
   * **Interactive Form-Filling:** Maps Excel columns directly to PDF form fields (`chase-dd.pdf`) and toggles dynamic radio buttons (e.g., *Checking* vs. *Savings*).
   * **Batch Generation:** Programmatically outputs individual, client-named PDFs into a designated output directory.
 
+
+#### 2.3 PDF OCR Text Extraction Script
+
+* **Tech Stack:** `PyMuPDF`, `pytesseract`(Tesseract OCR), `Pillow`(PIL), `JSON` 
+* **Overview:** Converts scanned PDF documents into high-resolution images to extract structured text using Tesseract OCR and export it to JSON
+* **Key Features:**
+  * **High-Res Rendering:** Renders PDF pages into RGB images at 300 DPI via PyMuPDF to maximize OCR accuracy
+  * **Configured OCR Engine:** Uses Tesseract with Page Segmentation Mode 6 optimized for standard text blocks
+  * **Structured JSON Export:** Formats extracted text by page number and saves the output to local directory (static/ocr.json)
+
 ---
 
 ### 3. 🌐 Web Scraping & Extraction Pipelines (Static & Dynamic)
